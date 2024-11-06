@@ -7,6 +7,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Barra fixa superior -->
+    <div class="navbar">
+        <div class="logo" onclick="toggleSidebar()">
+            <img class="logo" src="../images/LogoEmpresa.png" alt="" />
+
+        </div>
+        <div class="nav-buttons">
+            <button>Início</button>
+            <button>Estoques</button>
+            <button>Relatórios</button>
+            <div class="notification">
+                <span class="notification-icon">🔔</span>
+                <span class="notification-count">3</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra lateral escondida -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="#">Ajuda</a></li>
+            <li><a href="#">Sair</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
+
     <div class="title-balloon">
         <h2>Cadastro de Remédios</h2>
     </div>

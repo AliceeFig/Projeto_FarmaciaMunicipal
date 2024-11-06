@@ -7,12 +7,30 @@
     <link rel="stylesheet" href="read.css">
 </head>
 <body>
-    <div class="medicamento-detalhes-container">
-        <div class="medicamento-imagem">
-            <img src="imagem-remedio.jpg" alt="Imagem do Remédio">
-            <h3>Nome do Remédio</h3>
+    <div class="navbar">
+        <div class="logo" onclick="toggleSidebar()">
+            <img class="logo" src="../images/LogoEmpresa.png" alt="" />
+
         </div>
+        <div class="nav-buttons">
+            <button>Início</button>
+            <button>Estoques</button>
+            <button>Relatórios</button>
+            <div class="notification">
+                <span class="notification-icon">🔔</span>
+                <span class="notification-count">3</span>
+            </div>
+        </div>
+    </div>
+    <div class="medicamento-detalhes-container">
+        <!-- Imagem do remédio ao lado -->
+        <div class="medicamento-imagem">
+            <img src="https://via.placeholder.com/150?text=Remédio" alt="Imagem do Remédio">
+        </div>
+        
+        <!-- Informações do remédio -->
         <div class="medicamento-info">
+            <h3>Nome do Remédio</h3>
             <p><strong>Dosagem:</strong> 12 mg</p>
             <div class="dosagem-botoes">
                 <button>30 ml</button>
