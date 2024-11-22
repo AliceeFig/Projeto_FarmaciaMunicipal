@@ -54,11 +54,20 @@
                 <label for="dosagem">Dosagem:</label>
                 <input type="text" id="dosagem" name="dosagem" required>
 
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" name="descricao" required>
+
                 <label for="quantidade">Quantidade em Estoque:</label>
                 <input type="number" id="quantidade" name="quantidade" required>
 
+                <label for="data_validade">Data de validade:</label>
+                <input type="date" id="data_validade" name="data_validade" required>
+
                 <label for="categoria">Categoria:</label>
                 <input type="text" id="categoria" name="categoria" required>
+
+                <label for="criado_em">Adicionado em:</label>
+                <input type="criado_em" id="criado_em" name="criado_em" required>
 
                 <button type="submit">Cadastrar</button>
             </form>
@@ -96,3 +105,23 @@
     </script>
 </body>
 </html>
+
+
+<?php
+include 'farmacia_popular';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nome = $_POST['nome'];
+    $dosagem = $_POST['dosagem'];
+    $descricao = $_POST['descricao'];
+    $quantidade = $_POST['quantidade'];
+    $data_validade = $_POST['data_validade'];
+    $categoria = $_POST['categoria'];
+    $criado_em = $_POST['criado_em'];
+
+    $smt = $pdo->prepare("INSERT INTO medicamentos (nome,dosagem, descricao, quantidade, data_validade, categoria, criado em) VALUES (?, ?)");
+    $smt->execute([$nome, $dosagem, $descricao, $quantidade, $data_validade, $categoria, $criado_em]);
+
+    header("Location: index.php");
+}
+?>
